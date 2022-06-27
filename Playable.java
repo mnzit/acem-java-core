@@ -1,3 +1,3 @@
-public interface Playable{
+public interface Playable {
     void play();
 }

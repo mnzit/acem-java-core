@@ -1,2 +1,2 @@
-public abstract class MusicalInstrument implements Playable{
+public abstract class MusicalInstrument implements Playable {
 }

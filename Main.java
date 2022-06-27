@@ -1,30 +1,29 @@
 
-
-public class Main{
-    public static void main(String args[]){
+public class Main {
+    public static void main(String args[]) {
         String input = args[0];
         Playable playable = null;
-        switch(input){
+        switch (input) {
             case "football":
                 playable = new Football();
-            break;
+                break;
             case "basketball":
                 playable = new Basketball();
-            break;       
+                break;
             case "guitar":
                 playable = new Guitar();
-            break;   
-           case "violin":
+                break;
+            case "violin":
                 playable = new Violin();
-            break;   
+                break;
         }
-       play(playable);
+        play(playable);
     }
 
-    public static void play(Playable playable){
+    public static void play(Playable playable) {
         playable.play();
         playable.kick();
-        if(playable instanceof Football){
+        if (playable instanceof Football) {
             Football football = (Football) playable;
             football.kick();
         }
