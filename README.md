@@ -1,7 +1,7 @@
 # acem-JC03
 
 
-## ![Uploading image.png…](Naming convention (Programming Case))
+ [Uploading image.png…](Naming convention (Programming Case))
 
 ## FYI
 * Class Name - PascalCase
