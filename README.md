@@ -3,7 +3,7 @@
 
 ## FYI
 * Class Name - PascalCase
-* Method/Variable Name - CamelCase
+* Method/Variable Name - camelCase
 * Final Variable Name - UPPER_SNAKE_CASE
 
 
