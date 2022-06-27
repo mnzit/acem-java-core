@@ -3,9 +3,8 @@
 
 ## FYI
 * Class Name - PascalCase
-* Normal Variable Name - CamelCase
-* Table Name - UpperSnakeCase
-* Final Variable Name - UpperSnakeCase
+* Method/Variable Name - CamelCase
+* Final Variable Name - UPPER_SNAKE_CASE
 
 
 
