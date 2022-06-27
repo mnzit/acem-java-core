@@ -39,3 +39,9 @@ git push
 ```bash
 git pull 
 ```
+
+> Bundling with folder structure
+```bash
+javac path/to/MainClass.java -sourcepath src -d build/classes
+java -cp build/classes package.name.of.MainClass
+```
