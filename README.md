@@ -1,7 +1,7 @@
 # acem-JC03
 
-
- [Uploading image.png…](Naming convention (Programming Case))
+## Naming convention (Programming Case)
+<img width="1204" alt="image" src="https://user-images.githubusercontent.com/21164124/175962036-0a3c0620-ec50-455f-ac29-facde01c6045.png">
 
 ## FYI
 * Class Name - PascalCase
