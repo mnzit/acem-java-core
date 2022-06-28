@@ -48,7 +48,7 @@ git pull
 ssh-keygen
 ```
 > You can give any name to the file. We used testing as the key name here
-Output
+> Output
 ```sh
 ssh-keygen
 Generating public/private rsa key pair.
