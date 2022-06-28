@@ -1,11 +1,12 @@
 # acem-JC03
 
+## Naming convention (Programming Case)
+<img width="1204" alt="image" src="https://user-images.githubusercontent.com/21164124/175962036-0a3c0620-ec50-455f-ac29-facde01c6045.png">
 
 ## FYI
 * Class Name - PascalCase
-* Normal Variable Name - CamelCase
-* Table Name - UpperSnakeCase
-* Final Variable Name - UpperSnakeCase
+* Method/Variable Name - camelCase
+* Final Variable Name - UPPER_SNAKE_CASE
 
 
 
@@ -38,7 +39,6 @@ git push
 ```sh
 git pull 
 ```
-
 
 ## Setup Github access with ssh keys
 
@@ -84,3 +84,9 @@ cat testing.pub
 >Login to github head to setting then goto ssh/gpg keys and add the copied contents as new ssh key
 
 >Now, git project must be pointing to ssh origin to be able to push/pull from the repository
+
+## Bundling with folder structure
+```bash
+javac path/to/MainClass.java -sourcepath src -d build/classes
+java -cp build/classes package.name.of.MainClass
+```
