@@ -13,6 +13,7 @@
 public interface Playable {
  void play();
 }
+```
 
 ## Abstract Class
 > Abstract class acts as a abstraction layer that helps to group compatible objects with same behaviour/action
@@ -29,3 +30,4 @@ public abstract class Ball {
   System.out.println("Inflating ball");
  }
 }
+```
