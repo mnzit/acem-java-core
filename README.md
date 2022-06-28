@@ -86,7 +86,7 @@ cat testing.pub
 >Now, git project must be pointing to ssh origin to be able to push/pull from the repository
 
 ## Bundling with folder structure
-```bash
+```sh
 javac path/to/MainClass.java -sourcepath src -d build/classes
 java -cp build/classes package.name.of.MainClass
 ```
