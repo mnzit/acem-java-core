@@ -1,3 +1,9 @@
+package com.acem.jc;
+
+import com.acem.jc.ball.Football;
+import com.acem.jc.ball.Basketball;
+import com.acem.jc.musicalinstrument.Guitar;
+import com.acem.jc.musicalinstrument.Violin;
 
 public class Main {
     public static void main(String args[]) {
@@ -8,7 +14,7 @@ public class Main {
                 playable = new Football();
                 break;
             case "basketball":
-                playable = new Basketball();
+                playable = new Basketball();    
                 break;
             case "guitar":
                 playable = new Guitar();
@@ -22,7 +28,7 @@ public class Main {
 
     public static void play(Playable playable) {
         playable.play();
-        playable.kick();
+     
         if (playable instanceof Football) {
             Football football = (Football) playable;
             football.kick();
