@@ -1,18 +1,23 @@
-### Atomic Datatypes (AtomicInteger, AtomicDouble...)
-> Atomics ensure that operation on variables are performed atomically
+##Thread
 
+* Threads may create local copies of variables, and the JVM can reorder code to optimize it, therefore there is no guarantee that the above code is run in exactly that order.
+
+### Atomic Datatypes (AtomicInteger, AtomicDouble...)
+* Atomics ensure that operation on variables are performed atomically
+* Ensures **atomicity**
 ```java
 int i = i + 1; // Performing read & write operation
 i++; // Performing read & write operation
 ```
-> No matter how you define i, a different Thread reading the value just when the above line is executed might get i, or i + 1, because the _operation_ is not atomically. If the other thread sets i to a different value, in worst case i could be set back to whatever it was before by thread A, because it was just in the middle of calculating i + 1 based on the old value, and then set i again to that old value + 1.
+* No matter how you define i, a different Thread reading the value just when the above line is executed might get i, or i + 1, because the _operation_ is not atomically. If the other thread sets i to a different value, in worst case i could be set back to whatever it was before by thread A, because it was just in the middle of calculating i + 1 based on the old value, and then set i again to that old value + 1.
 ```
 Assume i = 0
 Thread A reads i, calculates i+1, which is 1
 Thread B sets i to 1000 and returns
 Thread A now sets i to the result of the operation, which is i = 1
 ```
-> Atomics like AtomicInteger ensure, that such operations happen atomically. So the above issue cannot happen, i would either be 1000 or 1001 once both threads are finished.
+*  Atomics like AtomicInteger ensure, that such operations happen atomically. So the above issue cannot happen, i would either be 1000 or 1001 once both threads are finished.
+*  Atomic wraps volatile inside and provides higher level operation such as [compareAndSwap() ](https://en.wikipedia.org/wiki/Compare-and-swap)
 ### Volatile
 * Volatile ensures, that a certain, expected (memory) state is true across different threads,
 * Solves **visibility** issue
