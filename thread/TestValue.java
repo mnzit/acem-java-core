@@ -1,6 +1,6 @@
 public class TestValue extends Object{
 
-    private Integer number;
+    private volatile Integer number;
 
     public TestValue(Integer number){
         this.number = number;
@@ -9,6 +9,7 @@ public class TestValue extends Object{
 
     public void increment(){
         synchronized(number){
+            System.out.println("Incrementing: "+ number + " to "+ (number+1));
             number++;
         }
   
@@ -16,6 +17,7 @@ public class TestValue extends Object{
 
     public void decrement(){
         synchronized(number){
+            System.out.println("Decrementing: "+ number + " to "+ (number-1));
             number--;
         }
        
