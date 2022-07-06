@@ -1,23 +1,21 @@
-import java.util.stream.IntStream;
 
 public class Main {
     
     public static void main(String args[]){
+        System.out.println("Started Main Thread");
         
-        TestValue testValue = new TestValue(1);
+        Player player1 = new Player();
+        player1.setName("player-1");
+        Player player2 = new Player();
+        player2.setName("player-2");
 
-        Thread t1 = new Thread(() -> IntStream.range(1, 100).forEach(i -> testValue.increment()));
-        Thread t2 = new Thread(() -> IntStream.range(1, 100).forEach(i -> testValue.decrement()));
+        player1.setThread(player2);
+        player2.setThread(player1);
 
-        t1.start();
-        t2.start();
-        try{
-        Thread.sleep(4000);
-        }catch(Exception ex){
-
-        }
-        System.out.println(testValue);
-        
+        player1.start();
+        player2.start();
+       
+        System.out.println("Ended Main Thread");
     }
 
 }
