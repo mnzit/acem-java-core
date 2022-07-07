@@ -2,15 +2,35 @@
 public class Main {
 
     public static void main(String args[]) {
-        Player player = new Player(10);
-        System.out.println(Thread.currentThread().getName() + " started " + player.getName());
-        player.start();
+        final Processor processor = new Processor();
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    processor.produce();
+                } catch (InterruptedException ignored) {
+                }
+            }
+        });
+
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    processor.consume();
+                } catch (InterruptedException ignored) {
+                }
+            }
+        });
+
+        t1.start();
+        t2.start();
         try {
-            player.join();
+            t1.join();
+            t2.join();
         } catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
         }
-        System.out.println(Thread.currentThread().getName() + " waited for " + player.getName());
     }
 
 }
