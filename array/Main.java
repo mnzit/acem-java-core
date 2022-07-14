@@ -7,10 +7,11 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-       Scanner scanner = new Scanner(new FileReader("file.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("file.txt"));
+        String line;
+        while ((line = br.readLine()) != null)  System.out.println(line);
+        while ((line = br.readLine()) != null)  System.out.println(line);
 
-       while(scanner.hasNext()){
-           System.out.println(scanner.nextLine());
-       }
+
     }
 }
