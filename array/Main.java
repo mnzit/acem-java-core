@@ -1,28 +1,20 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) {
-        // Write to a file
+        Reader fileReader = new FileReader("quiz.txt");
         try {
-            FileWriter myWriter = new FileWriter("filename.txt");
-            myWriter.write("Files in Java might be tricky, but it is fun enough!");
-            myWriter.close();
-            System.out.println("Successfully wrote to the file.");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+            String result = fileReader.read();
+            QuestionBuilder questionsBuilder = new StringQuestionBuilderImpl();
+
+            System.out.println(questionsBuilder.build(result));
+
+
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
         }
 
-        try{
-            PrintWriter writer = new PrintWriter("the-file-name.txt", "UTF-8");
-            writer.println("The first line");
-            writer.println("The second line");
-            writer.close();
-        }catch (Exception ex){
-            System.out.println("An error occurred.");
-            ex.printStackTrace();
-        }
     }
 }
